@@ -1,4 +1,9 @@
-﻿using Leviatas.MicroRabbit.Domain.Core.Bus;
+﻿using Leviatas.MicroRabbit.Banking.Application.Interfaces;
+using Leviatas.MicroRabbit.Banking.Application.Services;
+using Leviatas.MicroRabbit.Banking.Data.Context;
+using Leviatas.MicroRabbit.Banking.Data.Repository;
+using Leviatas.MicroRabbit.Banking.Domain.Interfaces;
+using Leviatas.MicroRabbit.Domain.Core.Bus;
 using Leviatas.MicroRabbit.Infra.Bus;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +15,14 @@ namespace Leviatas.MicroRabbit.Infra.IoC
         {
             // Here we will register all our dependencies
             services.AddTransient<IEventBus, RabbitMQBus>();
+
+
+            // Application Services
+            services.AddTransient<IAccountService, AccountService>();
+
+            // Data Layer
+            services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<BankingDbContext>();
         }
     }
 }

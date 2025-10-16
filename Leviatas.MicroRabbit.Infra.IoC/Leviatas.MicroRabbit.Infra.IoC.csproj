@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Banking.Application\Leviatas.MicroRabbit.Banking.Application.csproj" />
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Banking.Data\Leviatas.MicroRabbit.Banking.Data.csproj" />
     <ProjectReference Include="..\Leviatas.MicroRabbit.Domain.Core\Leviatas.MicroRabbit.Domain.Core.csproj" />
     <ProjectReference Include="..\Leviatas.MicroRabbit.Infra.Bus\Leviatas.MicroRabbit.Infra.Bus.csproj" />
   </ItemGroup>
