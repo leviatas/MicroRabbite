@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{79602C91-F255-45E6-96FE-7145FAAEB8A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leviatas.MicroRabbit.Infra.Bus", "Leviatas.MicroRabbit.Infra.Bus\Leviatas.MicroRabbit.Infra.Bus.csproj", "{14C319A9-B197-4B09-9635-8E14C016C733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,12 +39,17 @@ Global
 		{E7029565-BEC6-41B7-A6FF-542FD114325E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7029565-BEC6-41B7-A6FF-542FD114325E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7029565-BEC6-41B7-A6FF-542FD114325E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C319A9-B197-4B09-9635-8E14C016C733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C319A9-B197-4B09-9635-8E14C016C733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C319A9-B197-4B09-9635-8E14C016C733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C319A9-B197-4B09-9635-8E14C016C733}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E7029565-BEC6-41B7-A6FF-542FD114325E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{14C319A9-B197-4B09-9635-8E14C016C733} = {0A8E0BF0-D35C-4CC4-8D86-A3D337C3E2EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BECD2FC5-17B0-44BF-AD78-1457A01819C1}
