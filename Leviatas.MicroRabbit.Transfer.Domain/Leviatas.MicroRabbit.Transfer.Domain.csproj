@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Commands\" />
-    <Folder Include="EventHandlers\" />
     <Folder Include="Events\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Domain.Core\Leviatas.MicroRabbit.Domain.Core.csproj" />
   </ItemGroup>
 
 </Project>

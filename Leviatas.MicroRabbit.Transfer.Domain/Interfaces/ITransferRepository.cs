@@ -4,6 +4,7 @@ namespace Leviatas.MicroRabbit.Banking.Domain.Interfaces
 {
     public interface ITransferRepository
     {
+        void Add(TransferLog transferLog);
         IEnumerable<TransferLog> GetTransferLogs();
 
     }

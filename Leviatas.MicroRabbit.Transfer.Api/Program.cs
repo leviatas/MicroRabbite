@@ -43,7 +43,15 @@ namespace Leviatas.MicroRabbit.Transfer.Api
 
             app.MapControllers();
 
+            ConfigureEventBus(app);
+
             app.Run();
+        }
+
+        private static void ConfigureEventBus(WebApplication app)
+        {
+            var eventBus = app.Services.GetRequiredService<Leviatas.MicroRabbit.Domain.Core.Bus.IEventBus>();
+            eventBus.Subscribe<Domain.Events.TransferCreatedEvent, Domain.EventHandlers.TransferEventHandler>();
         }
 
         private static void RegisterServices(IServiceCollection services)
