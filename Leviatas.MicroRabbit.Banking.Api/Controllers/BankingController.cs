@@ -30,5 +30,19 @@ namespace Leviatas.MicroRabbit.Banking.Api.Controllers
                 return StatusCode(500, "An error occurred while retrieving accounts");
             }
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] AccountTransferDTO accountTransfer)
+        {
+            try
+            {
+                _accountService.Transfer(accountTransfer);
+                return Ok(accountTransfer);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while retrieving accounts");
+            }
+        }
     }
 }
