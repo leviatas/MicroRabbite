@@ -1,4 +1,9 @@
 
+
+using Leviatas.MicroRabbit.Banking.Data.Context;
+using Leviatas.MicroRabbit.Infra.IoC;
+using Microsoft.EntityFrameworkCore;
+
 namespace Leviatas.MicroRabbit.Banking.Api
 {
     public class Program
@@ -7,12 +12,21 @@ namespace Leviatas.MicroRabbit.Banking.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
             // Add services to the container.
+            builder.Services.AddDbContext<BankingDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("BankingDbConnection"));
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+
+            RegisterServices(builder.Services);
 
             var app = builder.Build();
 
@@ -31,6 +45,11 @@ namespace Leviatas.MicroRabbit.Banking.Api
             app.MapControllers();
 
             app.Run();
+        }
+
+        private static void RegisterServices(IServiceCollection services)
+        {
+            DependencyContainer.RegisterServices(services);
         }
     }
 }
