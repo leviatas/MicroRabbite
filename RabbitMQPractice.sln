@@ -59,6 +59,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leviatas.MicroRabbit.Transf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leviatas.MicroRabbit.Transfer.Domain", "Leviatas.MicroRabbit.Transfer.Domain\Leviatas.MicroRabbit.Transfer.Domain.csproj", "{8A69536D-300F-425F-86AC-A4BE466718AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationFolder", "PresentationFolder", "{369CB01D-A1A7-72D2-AABC-3F0945D148A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leviatas.MicroRabbit.MVC", "Leviatas.MicroRabbit.MVC\Leviatas.MicroRabbit.MVC.csproj", "{82BAEFA3-5F44-4AF4-A6E4-6B48A7BE8119}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +121,10 @@ Global
 		{8A69536D-300F-425F-86AC-A4BE466718AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A69536D-300F-425F-86AC-A4BE466718AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A69536D-300F-425F-86AC-A4BE466718AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82BAEFA3-5F44-4AF4-A6E4-6B48A7BE8119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82BAEFA3-5F44-4AF4-A6E4-6B48A7BE8119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82BAEFA3-5F44-4AF4-A6E4-6B48A7BE8119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82BAEFA3-5F44-4AF4-A6E4-6B48A7BE8119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +151,7 @@ Global
 		{4CEB8147-66FF-45A7-8411-0617C0921C81} = {AF246F80-4FF5-4020-AA29-B9CD559D64F8}
 		{1031B577-6C39-404D-803F-C5157DAD3BF2} = {DC2716A0-C555-46E7-B0B0-E11DF63FB1A1}
 		{8A69536D-300F-425F-86AC-A4BE466718AB} = {C1A32455-16EA-4CD0-BFD6-36DCD0E54238}
+		{82BAEFA3-5F44-4AF4-A6E4-6B48A7BE8119} = {369CB01D-A1A7-72D2-AABC-3F0945D148A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BECD2FC5-17B0-44BF-AD78-1457A01819C1}
