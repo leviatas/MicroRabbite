@@ -15,6 +15,8 @@
     <ProjectReference Include="..\Leviatas.MicroRabbit.Banking.Data\Leviatas.MicroRabbit.Banking.Data.csproj" />
     <ProjectReference Include="..\Leviatas.MicroRabbit.Domain.Core\Leviatas.MicroRabbit.Domain.Core.csproj" />
     <ProjectReference Include="..\Leviatas.MicroRabbit.Infra.Bus\Leviatas.MicroRabbit.Infra.Bus.csproj" />
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Transfer.Application\Leviatas.MicroRabbit.Transfer.Application.csproj" />
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Transfer.Data\Leviatas.MicroRabbit.Transfer.Data.csproj" />
   </ItemGroup>
 
 </Project>

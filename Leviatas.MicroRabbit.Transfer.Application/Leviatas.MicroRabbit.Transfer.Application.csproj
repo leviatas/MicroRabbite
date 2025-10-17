@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Domain.Core\Leviatas.MicroRabbit.Domain.Core.csproj" />
+    <ProjectReference Include="..\Leviatas.MicroRabbit.Transfer.Domain\Leviatas.MicroRabbit.Transfer.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

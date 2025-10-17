@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Leviatas.MicroRabbit.Banking.Api/appsettings.Development.json
+/Leviatas.MicroRabbit.Transfer.Api/appsettings.Development.json
