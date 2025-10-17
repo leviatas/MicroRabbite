@@ -20,27 +20,56 @@ namespace Leviatas.MicroRabbit.Infra.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
-            // Bus
+            //Domain Bus
             services.AddSingleton<IEventBus, RabbitMQBus>(sp =>
             {
-                // Using a factory method to resolve dependencies
                 var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
-                // Create and return the RabbitMQBus instance
-                return new RabbitMQBus(sp.GetRequiredService<IMediator>(), scopeFactory);
+                return new RabbitMQBus(sp.GetService<IMediator>(), scopeFactory);
             });
 
+            //Subscriptions
+            services.AddTransient<TransferEventHandler>();
 
+            //Domain Events
+            services.AddTransient<IEventHandler<Transfer.Domain.Events.TransferCreatedEvent>, TransferEventHandler>();
 
-            // Domain Banking Commands
+            //Domain Banking Commands
             services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
 
-            // Application Services
+            //Application Services
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<ITransferService, TransferService>();
 
-            // Data Layer
+            //Data
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<ITransferRepository, TransferRepository>();
             services.AddTransient<BankingDbContext>();
+            services.AddTransient<TransferDbContext>();
         }
+
+        //public static void RegisterServices(IServiceCollection services)
+        //{
+        //    // Bus
+        //    services.AddSingleton<IEventBus, RabbitMQBus>(sp =>
+        //    {
+        //        // Using a factory method to resolve dependencies
+        //        var scopeFactory = sp.GetRequiredService<IServiceScopeFactory>();
+        //        // Create and return the RabbitMQBus instance
+        //        return new RabbitMQBus(sp.GetRequiredService<IMediator>(), scopeFactory);
+        //    });
+
+
+
+        //    // Domain Banking Commands
+        //    services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
+
+        //    // Application Services
+        //    services.AddTransient<IAccountService, AccountService>();
+
+        //    // Data Layer
+        //    services.AddTransient<IAccountRepository, AccountRepository>();
+        //    services.AddTransient<BankingDbContext>();
+        //}
 
         public static void RegisterServicesTransfer(IServiceCollection services)
         {

@@ -1,7 +1,7 @@
 
 
+using Leviatas.MicroRabbit.Banking.Api.Extensions;
 using Leviatas.MicroRabbit.Banking.Data.Context;
-using Leviatas.MicroRabbit.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
 
 namespace Leviatas.MicroRabbit.Banking.Api
@@ -26,7 +26,7 @@ namespace Leviatas.MicroRabbit.Banking.Api
 
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
-            RegisterServices(builder.Services);
+            builder.RegisterServices();
 
             var app = builder.Build();
 
@@ -45,11 +45,6 @@ namespace Leviatas.MicroRabbit.Banking.Api
             app.MapControllers();
 
             app.Run();
-        }
-
-        private static void RegisterServices(IServiceCollection services)
-        {
-            DependencyContainer.RegisterServices(services);
         }
     }
 }

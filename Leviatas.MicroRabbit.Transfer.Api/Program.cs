@@ -1,6 +1,6 @@
 
 using Leviatas.MicroRabbit.Banking.Data.Context;
-using Leviatas.MicroRabbit.Infra.IoC;
+using Leviatas.MicroRabbit.Transfer.Api.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Leviatas.MicroRabbit.Transfer.Api
@@ -24,8 +24,7 @@ namespace Leviatas.MicroRabbit.Transfer.Api
 
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
-
-            RegisterServices(builder.Services);
+            builder.RegisterServices();
 
             var app = builder.Build();
 
@@ -52,11 +51,6 @@ namespace Leviatas.MicroRabbit.Transfer.Api
         {
             var eventBus = app.Services.GetRequiredService<Leviatas.MicroRabbit.Domain.Core.Bus.IEventBus>();
             eventBus.Subscribe<Domain.Events.TransferCreatedEvent, Domain.EventHandlers.TransferEventHandler>();
-        }
-
-        private static void RegisterServices(IServiceCollection services)
-        {
-            DependencyContainer.RegisterServicesTransfer(services);
         }
     }
 }
